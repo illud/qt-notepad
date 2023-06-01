@@ -9,8 +9,7 @@ NotePad::NotePad(QWidget *parent)
 {
     ui->setupUi(this);
     this->setCentralWidget(ui->textEdit);
-   QMessageBox msgBox = QMessageBox();
-    msgBox.setStyleSheet("QLabel{ color: white}");
+    ui->menubar->setStyleSheet("QMenuBar::item:selected { background: #474747; } QMenuBar::item:pressed {  background: #474747; }");
 }
 
 NotePad::~NotePad()
