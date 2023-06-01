@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
-    <height>417</height>
+    <width>878</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -58,7 +58,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>631</width>
+     <width>878</width>
      <height>21</height>
     </rect>
    </property>
@@ -75,11 +75,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
+    <addaction name="actionPrint"/>
     <addaction name="actionExit"/>
-    <addaction name="actionExit_2"/>
+    <addaction name="actionNew"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="styleSheet">
@@ -98,22 +98,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionNew">
-   <property name="icon">
-    <iconset theme="input-gaming">
-     <normaloff>../../Downloads/Nueva carpeta (3)/Icons/New.bmp</normaloff>../../Downloads/Nueva carpeta (3)/Icons/New.bmp</iconset>
-   </property>
-   <property name="text">
-    <string>New</string>
-   </property>
-   <property name="white" stdset="0">
-    <color>
-     <red>255</red>
-     <green>255</green>
-     <blue>255</blue>
-    </color>
-   </property>
-  </action>
   <action name="actionOpen">
    <property name="text">
     <string>Open</string>
@@ -124,12 +108,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Save</string>
    </property>
   </action>
-  <action name="actionExit">
+  <action name="actionPrint">
    <property name="text">
     <string>Print</string>
    </property>
   </action>
-  <action name="actionExit_2">
+  <action name="actionExit">
    <property name="text">
     <string>Exit</string>
    </property>
@@ -157,6 +141,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <action name="actionRedo">
    <property name="text">
     <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New</string>
    </property>
   </action>
  </widget>
