@@ -32,7 +32,14 @@ void NotePad::on_actionOpen_triggered()
     QFile file(fileName);
     currentFile = fileName;
     if(!file.open(QIODevice::ReadOnly | QFile::Text)){
-        QMessageBox::warning(this, "Warning", "Cannot open file: " + file.errorString());
+        QMessageBox m_MsgBox;
+        //m_MsgBox.setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+        m_MsgBox.setIcon(QMessageBox::Warning);
+        m_MsgBox.setText("Cannot open file: " + file.errorString());
+        m_MsgBox.setStandardButtons(QMessageBox::Ok);
+        m_MsgBox.setStyleSheet("QLabel{font-size: 13px; color: #ffffff;} QPushButton{ width:25px; font-size: 13px; background-color: #424242; color: #ffffff; } QMessageBox{background-color: #383838;}");
+        if(m_MsgBox.exec() == QMessageBox::Ok)
+            m_MsgBox.close();
         return;
     }
     setWindowTitle(fileName);
@@ -48,7 +55,14 @@ void NotePad::on_actionSave_triggered()
     QString fileName = QFileDialog::getSaveFileName(this, "Save as");
     QFile file(fileName);
     if(!file.open(QFile::WriteOnly | QFile::Text)){
-        QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
+        QMessageBox m_MsgBox;
+        //m_MsgBox.setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+        m_MsgBox.setIcon(QMessageBox::Warning);
+        m_MsgBox.setText("Cannot save file: " + file.errorString());
+        m_MsgBox.setStandardButtons(QMessageBox::Ok);
+        m_MsgBox.setStyleSheet("QLabel{font-size: 13px; color: #ffffff;} QPushButton{ width:25px; font-size: 13px; background-color: #424242; color: #ffffff; } QMessageBox{background-color: #383838;}");
+        if(m_MsgBox.exec() == QMessageBox::Ok)
+            m_MsgBox.close();
         return;
     }
     currentFile = fileName;
@@ -66,7 +80,14 @@ void NotePad::on_actionPrint_triggered()
     printer.setPrinterName("Print Name");
     QPrintDialog pDialog(&printer, this);
     if(pDialog.exec() == QDialog::Rejected){
-        QMessageBox::warning(this, "Warning", "Cannot Access printer");
+        QMessageBox m_MsgBox;
+        //m_MsgBox.setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
+        m_MsgBox.setIcon(QMessageBox::Warning);
+        m_MsgBox.setText("Cannot Access printer.");
+        m_MsgBox.setStandardButtons(QMessageBox::Ok);
+        m_MsgBox.setStyleSheet("QLabel{font-size: 13px; color: #ffffff;} QPushButton{ width:25px; font-size: 13px; background-color: #424242; color: #ffffff; } QMessageBox{background-color: #383838;}");
+        if(m_MsgBox.exec() == QMessageBox::Ok)
+            m_MsgBox.close();
         return;
     }
     ui->textEdit->print(&printer);
