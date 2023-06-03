@@ -1,1 +1,1 @@
-# qt-notepad
+# qt-notepad![QT-TODO-LIST](./inAppImgs/notePad.png)## Buildwindeployqt.exe --no-translations "C:\release-path\release\notepad.exe"
