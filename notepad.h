@@ -10,6 +10,9 @@
 #include <QMessageBox>
 #include <QtPrintSupport/QPrintDialog>
 #include <QtPrintSupport/QPrinter>
+#include <QToolButton>
+#include <QLabel>
+#include <QTabBar>
 #include "pad.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,7 +31,7 @@ public:
 private slots:
     void on_tabWidget_tabCloseRequested(int index);
 
-    void on_actionNew_Tab_triggered();
+    void addTab();
 
 private:
     Ui::NotePad *ui;

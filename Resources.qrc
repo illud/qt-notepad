@@ -1,3 +1,7 @@
 <RCC>
-    <qresource prefix="/imgs"/>
+    <qresource prefix="/resources">
+        <file>icons/delete.png</file>
+        <file>icons/delete-hover.png</file>
+        <file>icons/plus.png</file>
+    </qresource>
 </RCC>

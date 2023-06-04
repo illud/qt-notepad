@@ -13,6 +13,13 @@
   <property name="windowTitle">
    <string>NotePad</string>
   </property>
+  <property name="windowIcon">
+   <iconset theme="text-html">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(33, 33, 33);</string>
   </property>
@@ -32,13 +39,13 @@
 }
 
 QTabBar::tab {
-  background: #272727;
+  background: #424242;
   color: white;
   padding: 10px;
  }
 
  QTabBar::tab:selected {
-  background: #393939;
+  background: #373737;
  }
 
 QTabWidget::pane { 
@@ -46,14 +53,11 @@ QTabWidget::pane {
 }
 
 QTabBar::close-button { 
-   image: url(https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png)
-    background-color: transparent ; 
-    subcontrol-position: left;
+   image: url(:/resources/icons/delete.png)
 }
 
 QTabBar::close-button:hover {     
-	background-color: gray ;
-	image: url()
+   image: url(:/resources/icons/delete-hover.png)
  }</string>
     </property>
     <property name="tabPosition">
@@ -63,11 +67,19 @@ QTabBar::close-button:hover {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>-1</number>
+     <number>0</number>
     </property>
     <property name="tabsClosable">
      <bool>true</bool>
     </property>
+    <property name="movable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="new_tab">
+     <attribute name="title">
+      <string/>
+     </attribute>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -318,17 +330,6 @@ selection-background-color: rgb(40, 40, 40);</string>
    <property name="nativeMenuBar">
     <bool>true</bool>
    </property>
-   <widget class="QMenu" name="menuNew_Tab">
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-selection-background-color: rgb(71, 71, 71);</string>
-    </property>
-    <property name="title">
-     <string>Tab</string>
-    </property>
-    <addaction name="actionNew_Tab"/>
-   </widget>
-   <addaction name="menuNew_Tab"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
@@ -378,11 +379,6 @@ selection-background-color: rgb(71, 71, 71);</string>
   <action name="actionNew">
    <property name="text">
     <string>New</string>
-   </property>
-  </action>
-  <action name="actionNew_Tab">
-   <property name="text">
-    <string>New Tab</string>
    </property>
   </action>
  </widget>
