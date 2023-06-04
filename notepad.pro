@@ -10,13 +10,16 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    notepad.cpp
+    notepad.cpp \
+    pad.cpp
 
 HEADERS += \
-    notepad.h
+    notepad.h \
+    pad.h
 
 FORMS += \
-    notepad.ui
+    notepad.ui \
+    pad.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
