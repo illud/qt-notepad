@@ -13,6 +13,7 @@
 #include <QToolButton>
 #include <QLabel>
 #include <QTabBar>
+#include <QGraphicsBlurEffect>
 #include "pad.h"
 
 QT_BEGIN_NAMESPACE

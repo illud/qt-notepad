@@ -76,6 +76,9 @@ QTabBar::close-button:hover {
      <bool>true</bool>
     </property>
     <widget class="QWidget" name="new_tab">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <attribute name="title">
       <string/>
      </attribute>

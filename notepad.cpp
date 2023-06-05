@@ -6,6 +6,9 @@ NotePad::NotePad(QWidget *parent)
     , ui(new Ui::NotePad)
 {
     ui->setupUi(this);
+
+    //QMainWindow::setWindowFlags(Qt::Widget | Qt::FramelessWindowHint);
+
     //this->setCentralWidget(ui->textEdit);
     this->setCentralWidget(ui->tabWidget);
      ui->menubar->setStyleSheet("QMenuBar::item:selected { background: #474747; } QMenuBar::item:pressed {  background: #474747; }");
@@ -16,15 +19,16 @@ NotePad::NotePad(QWidget *parent)
      QToolButton *tb = new QToolButton();
      //tb->setText("+");
      tb->setIcon(QIcon(":/resources/icons/plus.png"));
-     //tb->setIconSize(QSize(20, 20));
+     tb->setIconSize(QSize(20, 20));
      tb->setAutoRaise(true);
-     tb->setStyleSheet("QToolButton{ color: white; background-color: transparent; }");
+     tb->setStyleSheet("QToolButton{ color: white; background-color: transparent; margin-right: 8px; }");
      connect(tb, SIGNAL(clicked()), this, SLOT(addTab()));
 
      //ui->tabWidget->addTab(new QLabel("You can add tabs by pressing <b>\"+\"</b>"), QString());
      ui->tabWidget->setTabEnabled(0, false);
      ui->tabWidget->tabBar()->setTabButton(0, QTabBar::RightSide, tb);
-
+     ui->tabWidget->insertTab( ui->tabWidget->count() - 1, new Pad(), "Tab");
+     ui->tabWidget->setCurrentIndex(0);
 }
 
 NotePad::~NotePad()
